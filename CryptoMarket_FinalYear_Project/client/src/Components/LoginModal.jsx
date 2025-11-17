@@ -14,7 +14,7 @@ export default function LoginModal({ closemod }) {
       email: credentials.email,
       password: credentials.password,
     };
-    const response = await fetch("http://localhost:5000/logging/login", {
+    const response = await fetch("http://localhost:5001/logging/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -80,7 +80,7 @@ export default function LoginModal({ closemod }) {
                 Password
               </label>
               <input
-                type="number"
+                type="text"
                 id="password"
                 name="password"
                 value={credentials.password}

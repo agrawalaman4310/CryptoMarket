@@ -15,7 +15,7 @@ export default function Dashboard() {
   const getallTransaction = async () => {
     await axios({
       method: "POST",
-      url: "http://localhost:5000/wallet/getwalletTransaction",
+      url: "http://localhost:5001/wallet/getwalletTransaction",
       data: {
         login: login,
       },
@@ -58,7 +58,7 @@ export default function Dashboard() {
   const getamount = async () => {
     await axios({
       method: "POST",
-      url: "http://localhost:5000/wallet/getwalletAmount",
+      url: "http://localhost:5001/wallet/getwalletAmount",
       data: {
         login: login,
       },
@@ -95,7 +95,7 @@ export default function Dashboard() {
   useEffect(() => {
     const fetchuserdata = async () => {
       const response = await fetch(
-        "http://localhost:5000/dashboard/userdetails",
+        "http://localhost:5001/dashboard/userdetails",
         {
           method: "POST",
           body: JSON.stringify({ UserId: userid }),

@@ -19,7 +19,7 @@ export default function CoinSell() {
   const [id, setid] = useState();
   const getid = async () => {
     const response = await fetch(
-      "http://localhost:5000/dashboard/dashboard",
+      "http://localhost:5001/dashboard/dashboard",
       {
         method: "POST",
         body: JSON.stringify({ Token: localStorage.authToken }),
@@ -66,7 +66,7 @@ export default function CoinSell() {
   const getallTransaction = async () => {
     await axios({
       method: "POST",
-      url: "http://localhost:5000/wallet/getwalletTransaction",
+      url: "http://localhost:5001/wallet/getwalletTransaction",
       data: {
         login: login,
       },
@@ -87,7 +87,7 @@ export default function CoinSell() {
   const getamount = async () => {
     await axios({
       method: "POST",
-      url: "http://localhost:5000/wallet/getwalletAmount",
+      url: "http://localhost:5001/wallet/getwalletAmount",
       data: {
         login: login,
       },
@@ -129,7 +129,7 @@ export default function CoinSell() {
 
       const response = await axios({
         method: "POST",
-        url: "http://localhost:5000/transactions/selltransactions",
+        url: "http://localhost:5001/transactions/selltransactions",
         data: {
           Quantity: Quantity,
           Amount: (`${state.data.current_price}` / 100) * 83 * Quantity,
@@ -185,7 +185,7 @@ export default function CoinSell() {
 
         const response = await axios({
           method: "POST",
-          url: "http://localhost:5000/transactions/selltransactions",
+          url: "http://localhost:5001/transactions/selltransactions",
           data: {
             Quantity:
               Amount_for_amount / ((`${state.data.current_price}` / 100) * 83),

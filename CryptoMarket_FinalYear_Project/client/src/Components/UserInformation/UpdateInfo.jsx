@@ -33,7 +33,7 @@ export default function UpdateInfo() {
         setUrl(data.url);
         console.log(url);
         const response = await fetch(
-          "http://localhost:5000/dashboard/profileupdate",
+          "http://localhost:5001/dashboard/profileupdate",
           {
             method: "POST",
             body: JSON.stringify({ UserId: userid, ProfileUrl: data.url }),
@@ -61,7 +61,7 @@ export default function UpdateInfo() {
   useEffect(() => {
     const fetchuserdata = async () => {
       const response = await fetch(
-        "http://localhost:5000/dashboard/userdetails",
+        "http://localhost:5001/dashboard/userdetails",
         {
           method: "POST",
           body: JSON.stringify({ UserId: userid }),

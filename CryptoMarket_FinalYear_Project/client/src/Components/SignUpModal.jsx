@@ -17,7 +17,7 @@ export default function SignUpModal({ closemod }) {
 
   const eventHandler = async () => {
     
-    const response = await fetch("http://localhost:5000/register/createuser", {
+    const response = await fetch("http://localhost:5001/register/createuser", {
       method: "POST",
       headers: {
         "Content-type": "application/json",

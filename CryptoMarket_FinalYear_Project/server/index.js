@@ -4,15 +4,21 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const { header } = require("express-validator");
 const dashboardRouter = require("./Routes/Dashboard");
-
+require('dotenv').config();
 const app = express();
 
-app.use(cors())
+
+app.use(cors({
+  origin: "http://localhost:3000",
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+  credentials: true
+}));
+app.options("*", cors());
 //---------------mongoose connection----------------//
 
-const Connection_url =
-  "mongodb://localhost:27017/CryptoMain";
-const port = 5000;
+const Connection_url =process.env.MONGO_DB ;
+const port = 5001;
 
   mongoose.connect(Connection_url,()=>{
     console.log("connected to database successfully");
